@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+	<title> Yimi </title>
+	<meta name="Descripcion" content="Proyecto Xilion" />
+	<meta name="Autor" content="Ulii S" />
+	<meta name="Keywords" content="Proyecto xilion, trabajo final, proyecto final" />
+	<link rel="stylesheet" href="CSS/PageHeader.css">
+</head>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const carrusel = document.querySelector('.carrusel');
+		let isDown = false;
+		let startX;
+		let scrollLeft;
+		carrusel.addEventListener('mousedown', (e) => {
+			isDown = true;
+			carrusel.classList.add('active');
+			startX = e.pageX - carrusel.offsetLeft;
+			scrollLeft = carrusel.scrollLeft;
+		});
+		carrusel.addEventListener('mouseleave', () => {
+			isDown = false;
+			carrusel.classList.remove('active');
+		});
+		carrusel.addEventListener('mouseup', () => {
+			isDown = false;
+			carrusel.classList.remove('active');
+		});
+		carrusel.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - carrusel.offsetLeft;
+			const walk = (x - startX) * 10; // velocidad
+			carrusel.scrollLeft = scrollLeft - walk;
+		});
+		carruselWrapper.addEventListener('scroll', () => {
+			const scrollWidth = carousel.scrollWidth / 2;
+			if (carruselWrapper.scrollLeft >= scrollWidth) {
+				carruselWrapper.scrollLeft = 0;
+			}
+		});
+	});
+</script>
+
+<body>
+
+	<div class="wrapper">
+		<!--WebPageHeader-->
+		<header class="WebPageHeader">
+			<div class="HeadBox">
+				<div>
+					<img src="IMAGES/YimiLogo.svg" alt="Yimi" class="YimiLogo">
+
+					<!--Lo que ofrecemos-->
+					<button class="options-header">
+						<p>Lo que ofrecemos</p>
+						<img src="IMAGES/arrow.svg" alt="Arrow">
+					</button>
+
+					<!--Tipos de negocio-->
+					<a href="#" class="options-header">
+						<p>Tipos de negocios</p>
+						<img src="IMAGES/arrow.svg" alt="Arrow">
+					</a>
+
+
+					<a href="#" class="options-header">
+						<p>Precios</p>
+					</a>
+				</div>
+				<div>
+					<a href="#" class="options-header">
+						<p>Ayuda</p>
+					</a>
+					<button class="ButtonTest">
+						<div class="TasteFree">Probar gratis</div>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<div class="hoverheader">
+
+		</div>
+
+		<!--WebPageHeaderEND-->
+		<div class="contenedor-principal"></div>
+		<!--IntroWeb-->
+		<main class="intro">
+			<div class="content">
+				<div class="tittle">
+					<div class="taqueria">Taquería FoodTruck</div>
+					<div class="pedidos">Agiliza tomar Pedidos <br> en tu Taquería</div>
+					<div class="comanda">Agiliza la comanda, organiza la cocina y gestiona inventarios, mejorando la
+						satisfacción del cliente y la rotación de mesa.</div>
+
+					<div class="containerButtons">
+						<button class="comenzar">
+							<span class="tcomenzar">Comenzar hoy gratis</span>
+						</button>
+						<button class="obtener">
+							<span class="tobtener">Obtener demo</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="cont-img">
+				<div class="imgRestaurant">
+					<img src="IMAGES/restaurant.svg" alt="restaurant">
+					<div class="imgMenu">
+						<img src="IMAGES/menu.svg" alt="menu">
+					</div>
+
+				</div>
+			</div>
+		</main>
+		<!--IntroWebEND-->
+
+		<!--Recomends-->
+		<div class="clients">
+			<div class="bannerRecom">
+				<div class="recom1">
+					<div class="stars">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+					</div>
+					<div class="trecom">
+						<p>"En 5 minutos empecé"</p>
+					</div>
+					<div class="apprecom">
+						<p>App Store</p>
+					</div>
+				</div>
+				<div class="recom2">
+					<div class="stars">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+					</div>
+					<div class="trecom">
+						<p>"Lo recomiento al 100%"</p>
+					</div>
+					<div class="apprecom">
+						<p><small>Google Play</small></p>
+					</div>
+				</div>
+				<div class="recom3">
+					<div class="stars">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+						<img src="IMAGES/star.svg" alt="star">
+					</div>
+					<div class="trecom">
+						<p>"Soporte Increíble"</p>
+					</div>
+					<div class="apprecom">
+						<p><small>Google Play</small></p>
+					</div>
+				</div>
+			</div>
+			<div class="top">
+				<div class="no1">
+					<p><span class="azul">No.1 </span> Fácil de usar</p>
+				</div>
+				<div class="top5">
+					<p><span class="azul">Top 5 </span> POS</p>
+				</div>
+				<div class="min">
+					<p><span class="azul">5 min </span> Respuesta</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--RecomendsEND-->
+
+
+	<div class="page2">
+
+		<div class="contentpage2">
+			<div class="tittlemid">
+				<p>Brinda la atención más veloz, sin dolores de cabeza</p>
+			</div>
+			<!-- 1er ContInfo -->
+			<div class="content-row">
+				<div class="info1">
+					<p class="headInf1">De barra al cliente en tiempo récord</p>
+					<div class="descripcion1">
+						Ofrece una experiencia perfecta desde la mesa hasta tu servicio de pickup y delivery con un
+						simple
+						toque.
+					</div>
+					<div class="puntos">
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Estado de mesas y número de comensales
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Comandas al instante
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Conecta múltiples impresoras
+						</div>
+					</div>
+					<div class="buttonExplore">
+						<a href="#" class="exploremore"><button class="explore">Explorar más</button></a>
+					</div>
+				</div>
+				<div class="webimages">
+					<div class="infoImg">
+						<img src="IMAGES/webimagesbig1.svg" alt="Mockup sistema POS">
+					</div>
+				</div>
+			</div>
+			<!-- 2do ContInfo -->
+			<div class="content-row">
+				<div class="webimages">
+					<div class="infoImg">
+						<img src="IMAGES/webimages2big.svg" alt="Mockup sistema POS">
+					</div>
+				</div>
+				<div class="info1">
+					<p class="headInf1">Mantén la cocina en constante movimiento</p>
+					<div class="descripcion1">
+						Imprime ticket de comanda con alimentos y bebidas por áreas separadas y evita errores en gestión
+						de pedidos.
+					</div>
+					<div class="puntos">
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Separa por áreas para evitar
+							estancamientos
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Simplifica la operación en cocina y barra
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Reduce carga de trabajo en la estación de
+							cobro
+						</div>
+					</div>
+					<div class="buttonExplore">
+						<a href="#" class="exploremore"><button class="explore">Explorar más</button></a>
+					</div>
+				</div>
+			</div>
+			<!-- 3er ContInfo -->
+			<div class="content-row">
+				<div class="info1">
+					<p class="headInf1">Combos, Variantes y Modificaciones</p>
+					<div class="descripcion1">
+						¿A tu cliente le gusta experimentar con el menú? No te preocupes, nuestro software punto de
+						venta gestiona tus deliciosos combos de forma eficaz.
+					</div>
+					<div class="puntos">
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Gestiona varios combos y ofertas
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Variantes y add-ons sin esfuerzo
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Extras obligatorios y opcionales
+						</div>
+					</div>
+					<div class="buttonExplore">
+						<a href="#" class="exploremore"><button class="explore">Explorar más</button></a>
+					</div>
+				</div>
+				<div class="webimages">
+					<div class="infoImg">
+						<img src="IMAGES/webimages3big.svg" alt="Mockup sistema POS">
+					</div>
+				</div>
+			</div>
+			<!-- 4to ContInfo -->
+			<div class="content-row">
+				<div class="webimages">
+					<div class="infoImg">
+						<img src="IMAGES/webimages4big.svg" alt="Mockup sistema POS">
+					</div>
+				</div>
+				<div class="info1">
+					<p class="headInf1">Pon tu dinero donde más te convenga</p>
+					<div class="descripcion1">
+						Toma decisiones inteligentes basadas en datos. Analiza tendencias de ventas, desempeño de
+						productos, empleados y más para alcanzar tus objetivos de crecimiento.
+					</div>
+					<div class="puntos">
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Consulta datos en tiempo real
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Acceso a transacciones y flujo de caja
+						</div>
+						<div class="punto">
+							<img src="IMAGES/checkpoint.svg" alt="checkpoint"> Exporta informes financieros
+							cobro
+						</div>
+					</div>
+					<div class="buttonExplore">
+						<a href="#" class="exploremore"><button class="explore">Explorar más</button></a>
+					</div>
+				</div>
+			</div>
+			<!-- END ContInfo -->
+			<div class="usersrev">
+				<div class="urtittle">
+					<p class="texturtittle">Con la confianza de +5,000 negocios</p>
+				</div>
+				<div class="carrusel">
+					<div class="swiper-scrollbar">
+						<ul class="carousel">
+							<li class="item">
+								<div class="review">Es justo lo que necesito para administrar mi pequeño negocio. Y un
+									gran soporte técnico siempre al pendiente.</div>
+								<div class="specsreview">
+									<div class="cliente">
+										<div class="namecliente">Carniceria Galvan</div>
+										<div class="shop">Ver tienda</div>
+									</div>
+									<div class="ministars">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+									</div>
+								</div>
+							</li>
+							<!-- Duplicar los items para efecto infinito -->
+							<li class="item">
+								<div class="review">Yimi es todo lo que estaba buscando para mi negocio! Dejé el Excel y
+									ahora Yimi me facilita todo, es una app increíble y la recomiendo al 100%</div>
+								<div class="specsreview">
+									<div class="cliente">
+										<div class="namecliente">Marley PetFood</div>
+										<div class="shop">Ver tienda</div>
+									</div>
+									<div class="ministars">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="review">Es justo lo que necesito para administrar mi pequeño negocio. Y un
+									gran soporte técnico siempre al pendiente.</div>
+								<div class="specsreview">
+									<div class="cliente">
+										<div class="namecliente">Carniceria Galvan</div>
+										<div class="shop">Ver tienda</div>
+									</div>
+									<div class="ministars">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="review">Yimi es todo lo que estaba buscando para mi negocio! Dejé el Excel y
+									ahora Yimi me
+									facilita todo, es una app increíble y la
+									recomiendo al 100%</div>
+								<div class="specsreview">
+									<div class="cliente">
+										<div class="namecliente">Marley PetFood</div>
+										<div class="shop">Ver tienda</div>
+									</div>
+									<div class="ministars">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="review">Es justo lo que necesito para administrar mi pequeño negocio. Y un
+									gran soporte técnico siempre al pendiente.</div>
+								<div class="specsreview">
+									<div class="cliente">
+										<div class="namecliente">Carniceria Galvan</div>
+										<div class="shop">Ver tienda</div>
+									</div>
+									<div class="ministars">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+										<img src="IMAGES/star.svg" alt="star">
+									</div>
+								</div>
+							</li>
+							<!-- Puedes duplicar más si deseas mayor fluidez -->
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+<!--Title-->
